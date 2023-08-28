@@ -1,0 +1,5 @@
+.product-image {
+    max-width: 100%; /* Ensure the image doesn't exceed its container's width */
+    height: auto; /* Maintain aspect ratio while scaling */
+    max-height: 300px; /* Set a maximum height for the image */
+  }

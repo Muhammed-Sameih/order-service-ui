@@ -1,0 +1,30 @@
+<div class="d-flex align-items-center">
+  <a [routerLink]="'/details/' + cartItem.item.id" style="max-width: 30%">
+    <img
+      [src]="cartItem.item.imageUri"
+      class="img-thumbnail rounded cart-item-image mr-3 small-image mx-3"
+      alt="Product Image"
+      style="max-width: 80%"
+    />
+  </a>
+  <div class="flex-grow-1">
+    <h6 class="mb-1 text-primary">{{ cartItem.item.name }}</h6>
+    <p class="mb-0 text-muted">{{ cartItem.item.brandName }}</p>
+    <p class="mb-0">Price: ${{ cartItem.item.price }}</p>
+
+    <!-- Increase and Decrease Select -->
+    <div class="d-flex justify-content-between align-items-center my-2">
+      <app-select
+        [data]="getQuantityOptions(cartItem.inStock)"
+        [title]="'Qty'"
+        [defaultValue]="cartItem.quantity"
+        class="custom-select-width"
+        (selectedValue)="changeQuantity($event)"
+      ></app-select>
+    </div>
+  </div>
+  <!-- Remove button -->
+  <button class="btn btn-primary btn-sm ml-auto mr-10" (click)="remove()">
+    <i class="fas fa-trash-alt"></i> Remove
+  </button>
+</div>

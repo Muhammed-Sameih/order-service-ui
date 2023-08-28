@@ -1,0 +1,35 @@
+.product-card {
+  height: 100%;
+}
+
+.product-image {
+  object-fit: contain;
+  height: 150px;
+  width: 100%;
+}
+
+.product-details {
+  padding: 10px;
+  height: 120px;
+}
+
+.product-title {
+  font-size: 16px;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.product-brand,
+.product-price {
+  font-size: 14px;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+  

@@ -1,0 +1,39 @@
+<div class="card product-card">
+  <img
+    src="{{ product.imageUri }}"
+    class="card-img-top product-image"
+    alt="Product Image"
+    [routerLink]="'/details/' + product.id"
+  />
+  <div class="card-body product-details">
+    <h5 class="card-title product-title text-primary">
+      {{ product.name }}
+    </h5>
+    <p class="card-text product-brand fawry-text-secondary">
+      Brand: {{ product.brandName }}
+    </p>
+    <p class="card-text product-price fawry-text-secondary">
+      ${{ product.price }}
+    </p>
+    <div class="d-flex justify-content-between align-items-center my-2">
+      <p class="card-text product-brand fawry-text-secondary">
+        Category : {{ product.categoryName }}
+      </p>
+      <button
+        *ngIf="isInCart"
+        class="btn btn-secondary btn-sm app-secondary-button"
+        (click)="remove()"
+      >
+        Remove
+      </button>
+
+      <button
+        class="btn btn-primary btn-sm app-primary-button"
+        (click)="add()"
+        *ngIf="!isInCart"
+      >
+        Add to cart
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.custom-background {
+    background-color: #ffffff; /* Light gray color similar to LinkedIn's background  #f3f6f8*/
+  }
+
+/* Fawry Text Colors */
+.fawry-text-primary {
+color: #232f3e;
+}
+
+.fawry-text-secondary {
+color: #6e767d;
+}
+
+.custom-select-width {
+width: 30%;
+}
+  
+.line-through {
+  text-decoration: line-through;
+}
+
+.app-primary-button {
+  font-size: 12px;
+  padding: 5px 10px;
+  background-color: #FFB26B;
+  color: #000000;
+  border: 0px;
+  }
+.app-secondary-button {
+  font-size: 12px;
+  padding: 5px 10px;
+  border: 0px;
+  }

@@ -1,0 +1,149 @@
+<h2 class="mb-4 text-primary mt-3">Payment Details</h2>
+<div class="container mr-3" *ngIf="!loading">
+  <form (ngSubmit)="submitForm()" #paymentForm="ngForm">
+    <div class="form-group">
+      <label for="cardNumber" class="text-secondary">Card Number *</label>
+      <input
+        type="text"
+        class="form-control"
+        id="cardNumber"
+        name="cardNumber"
+        [(ngModel)]="cardNumber"
+        required
+        pattern="[0-9]{16}"
+      />
+      <div
+        *ngIf="
+          paymentForm.controls['cardNumber']?.invalid &&
+          (paymentForm.controls['cardNumber']?.touched || paymentForm.submitted)
+        "
+        class="text-danger"
+      >
+        Card number must be a 16-digit positive number.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="cvv" class="text-secondary">CVV *</label>
+      <input
+        type="password"
+        class="form-control"
+        id="cvv"
+        name="cvv"
+        [(ngModel)]="cvv"
+        required
+        pattern="[0-9]{2,3}"
+      />
+      <div
+        *ngIf="
+          paymentForm.controls['cvv']?.invalid &&
+          (paymentForm.controls['cvv']?.touched || paymentForm.submitted)
+        "
+        class="text-danger"
+      >
+        CVV must be a 2 or 3-digit positive number.
+      </div>
+      <!-- ... -->
+    </div>
+    <div class="form-group">
+      <label for="email" class="text-secondary">Email *</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        [(ngModel)]="email"
+        required
+        email
+      />
+      <div
+        *ngIf="
+          paymentForm.controls['email']?.invalid &&
+          (paymentForm.controls['email']?.touched || paymentForm.submitted)
+        "
+        class="text-danger"
+      >
+        Please enter a valid email address.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="couponCode" class="text-secondary">Coupon Code</label>
+      <input
+        type="text"
+        class="form-control"
+        id="couponCode"
+        name="couponCode"
+        [(ngModel)]="couponCode"
+      />
+    </div>
+    <!-- Shipping address fields -->
+    <h4 class="mt-4 text-secondary">Shipping Address</h4>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="country" class="text-secondary">State *</label>
+          <input
+            type="text"
+            class="form-control"
+            id="country"
+            name="country"
+            [(ngModel)]="country"
+            required
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="city" class="text-secondary">City *</label>
+          <input
+            type="text"
+            class="form-control"
+            id="city"
+            name="city"
+            [(ngModel)]="city"
+            required
+          />
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="street" class="text-secondary">Street *</label>
+      <input
+        type="text"
+        class="form-control"
+        id="street"
+        name="street"
+        [(ngModel)]="street"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="buildingNumber" class="text-secondary"
+        >Building Number *</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="buildingNumber"
+        name="buildingNumber"
+        [(ngModel)]="buildingNumber"
+        required
+      />
+    </div>
+    <!-- ... -->
+    <div class="mb-4">
+      <button
+        type="submit"
+        class="btn btn-primary app-primary-button mt-3 mb-4"
+        [disabled]="!paymentForm.valid"
+      >
+        Submit Payment
+      </button>
+    </div>
+  </form>
+</div>
+<div
+  class="text-center w-100 d-flex justify-content-center align-items-center vh-100"
+  *ngIf="loading"
+>
+  <app-spinner></app-spinner>
+</div>

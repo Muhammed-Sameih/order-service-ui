@@ -1,0 +1,15 @@
+<div class="d-flex align-items-center">
+  <label for="" class="fawry-text-secondary mx-1">{{ title }}</label>
+  <select
+    class="custom-select custom-select-sm custom-select-cool"
+    (change)="detectChanges($event)"
+  >
+    <option
+      *ngFor="let value of data"
+      [value]="value"
+      [selected]="value == defaultValue"
+    >
+      {{ value }}
+    </option>
+  </select>
+</div>

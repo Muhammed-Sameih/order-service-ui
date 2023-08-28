@@ -1,0 +1,32 @@
+.d-flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.custom-select-cool {
+  background-color: #ced4da;
+  color: #344259;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 13px;
+  transition: background-color 0.3s, border-color 0.3s;
+  width: 150px; /* Set your desired width */
+}
+
+.custom-select-cool:hover {
+  background-color:  #ced4da;
+  border-color: #344259;
+}
+
+.custom-select-cool:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #007bff1a;
+}
+
+.fawry-text-secondary {
+  color: #6e767d;
+}

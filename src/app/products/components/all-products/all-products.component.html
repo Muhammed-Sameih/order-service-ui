@@ -1,0 +1,28 @@
+<div *ngIf="!loading">
+  <div class="container mt-5">
+    <div class="row">
+      <ng-container *ngFor="let product of productsResponse.content">
+        <div class="col-md-3 col-sm-6 mb-4">
+          <app-product
+            [product]="product"
+            [isInCart]="checkIsInCart(product)"
+            (addItem)="addToCart($event)"
+            (removeItem)="removeFromCart($event)"
+          ></app-product>
+        </div>
+      </ng-container>
+    </div>
+    <app-pagination
+      [currentPage]="currentPage"
+      [totalPages]="totalPages"
+      (pageChange)="onPageChange($event)"
+    ></app-pagination>
+  </div>
+</div>
+
+<div
+  class="text-center w-100 d-flex justify-content-center align-items-center vh-100"
+  *ngIf="loading"
+>
+  <app-spinner></app-spinner>
+</div>

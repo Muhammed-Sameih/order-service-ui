@@ -1,0 +1,36 @@
+.fawry-navbar {
+    background-color:  #282527;
+    /* #232931*/
+    padding: 3px 0;
+}
+
+
+.fawry-navbar .navbar-brand {
+    color: #FFB26B;
+    padding: 0;
+}
+
+.fawry-navbar .navbar-toggler-icon {
+    background-color: #ffffff;
+}
+
+.fawry-nav-link {
+    color: #FFB26B;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.fawry-nav-link:hover {
+    color: #ffffff;
+}
+
+.secondary-nav-item {
+    position: relative;
+    left: 10%;
+}
+
+.logo-image {
+    width: 50px;
+    height: auto;
+}
