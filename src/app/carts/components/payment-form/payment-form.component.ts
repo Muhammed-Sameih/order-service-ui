@@ -25,7 +25,6 @@ export class PaymentFormComponent {
   constructor(private router: Router,private service:CartsService) {}
 
   submitForm() {
-    this.loading = false;
     const order: OrderRequest = {
       cardNumber: this.cardNumber,
       cvv: this.cvv,
@@ -39,15 +38,18 @@ export class PaymentFormComponent {
         code: this.couponCode
       };
     }
+    this.loading = false;
     this.service.crateNewOrder(order).subscribe(res =>{
       alert("Order created successfully!")
       this.clearCart();
       this.router.navigate(['/products']);
+      this.loading = false;
     },(error) => {
       console.error('Error creating order:', error);
       alert("Error : Order Fail!")
+      this.loading = false;
     })
-    this.loading = false;
+    
   }
   private getOderItemsFromCart(): OrderItem[]{
     const cart = JSON.parse(localStorage.getItem("cart") || "[]");
