@@ -1,4 +1,4 @@
-# E-Commerce microservice
+# Order Service UI microservice
 
 <details>
 <summary>Table of content</summary>
@@ -21,7 +21,7 @@
 
 ## About
 
-dadadad
+Welcome to the Order Service UI microservice! This application is designed to provide an enriched shopping experience, allowing you to explore products, manage your shopping cart, and securely complete transactions. Our intuitive interface ensures an effortless journey from product discovery to payment.
 
 ## Build with
 
@@ -30,8 +30,7 @@ This app is built with Angular ,bootstrap ,HTML and CSS
 ## About the backend used :
 
 - This app uses:
-  - [backend service 1]()
-  - [backend service 2]()
+  - [backend service](https://github.com/Muhammed-Sameih/OrderAPIs)
 
 ## Features ✨
 
@@ -174,9 +173,9 @@ This app is built with Angular ,bootstrap ,HTML and CSS
 ## Installation 📥
 
 ```bash
-> git clone https://github.com/AbdelrahmanShaheen/Forkify-app
-> cd Forkify-app/
-> npm install
+> git clone https://github.com/Muhammed-Sameih/order-service-ui.git
+> cd order-service-ui/
+> ng serve
 ```
 
 ## How to use
@@ -187,16 +186,18 @@ Use live server extension \
 or
 install nodejs : [nodejs](https://nodejs.org/en/download/) \
 then install live server as an npm package
+then install angular
 
 ```bash
-> npm install live-server -g
-> live-server
+sudo apt update
+sudo apt install nodejs npm
 ```
 
 ### using npm
 
 ```bash
-> npm run start
+> sudo npm install -g @angular/cli
+> ng serve
 ```
 
 The application will be running on your localhost.
@@ -211,5 +212,4 @@ Not mobile friendly.
 
 ## Future Feauters
 
-- abc
-- xyz
+- 
